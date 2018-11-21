@@ -1,0 +1,17 @@
+<!-- pages/index/index.wxml--> 
+
+
+ <view class='box'>
+  <form bindsubmit='searchBox'>
+      <input placeholder="请输入用户名" type='text' class='userBox' name='username'></input>
+      <input placeholder="请输入密码" type='text' class='pwdBox' name='pwd'></input>
+      <button class='login' form-type='submit'>登录</button>
+  </form>
+  
+  <view bindtap="xinjian">用户相关 </view>
+ 
+</view>
+
+
+
+
