@@ -3,14 +3,17 @@
 
  <view class='box'>
   <form bindsubmit='searchBox'>
-      <input placeholder="请输入用户名" type='text' class='userBox' name='username'></input>
-      <input placeholder="请输入密码" type='text' class='pwdBox' name='pwd'></input>
-      <button class='login' form-type='submit'>登录</button>
+      <input placeholder="请输入用户名" type='text'  name='username'></input>
+      <input placeholder="请输入密码" type='text'  name='pwd'></input>
+      <button  form-type='submit'>登录</button>
   </form>
   
-  <view bindtap="xinjian">用户相关 </view>
+  <view bindtap="xinjianyonghu">新建用户 </view>
+  <view bindtap="xiugaiyonghu">修改密码 </view>
+   <view bindtap="refresh_bt">刷新页面 </view>
  
 </view>
+
 
 
 

@@ -1,75 +1,34 @@
+var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    arr2: []
-
+    itemLists: []
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    var that = this;
-    that.setData({
-      arr2: options.arr2,
+  deleteIitems(e) {
+    let idx = e.currentTarget.dataset.idx
+    let list = this.data.itemLists
+    let filterRes = list.filter((ele, index) => {
+      return index != idx
     })
-    wx.showToast({
-      title: '成ww'+arr2,
-      icon: 'success',
-      duration: 2000
-    })  
+    this.setData({
+      itemLists: filterRes
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  dengluyemian:function(e){
+wx.redirectTo({
+    url: '../xinjian/xinjian'
+  })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-
-
+ onLoad: function () {
+   var that = this;
+   var listnew = app.globalData.singleChoiceAnswerNow ;
+   this.setData({
+     itemLists: listnew
+      })
+   wx.showToast({
+     title: '成功' ,
+     icon: 'success',
+     duration: 2000
+   })
+ }
 })
+

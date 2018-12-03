@@ -1,1 +1,12 @@
-<text> {{arr2}}</text>
+<!-- <view class="add-btn" bindtap='addItems'>添加</view> -->
+<view  style="padding-left:100px;">用户</view>
+<view  >密码</view>
+ 
+<view wx:for="{{itemLists}}" wx:key="index" class='list'>
+  <input type='text' value='{{item.id}}'></input>
+  <text>{{item.time}}</text>
+  <text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text>
+</view>
+<button bindtap='dengluyemian'>返回</button>
+
+

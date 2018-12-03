@@ -1,6 +1,7 @@
 {"pages": [
 "pages/index/index",
-"pages/yonghu/yonghu",
+"pages/xinjian/xinjian",
+"pages/xiugai/xiugai",
 "pages/shuju/shuju",
 "pages/logs/logs"
 ]}

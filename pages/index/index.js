@@ -1,65 +1,39 @@
-// pages/index/index.js
-//  var name;
 var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    aaa: '111',
-    bbb: '222',
-    value:'',
+     aaa: '111',
+     bbb: '222',
+    itemLists: [
+      { id: 1, time: '111 222' },
+      { id: 2, time: '222 333' },
+      { id: 3, time: '333 444' },
+    ]
   },
   searchBox: function (e) {
     const that = this;
-    let first, second;
+    var first, second;
       first= e.detail.value.username,
       second= e.detail.value.pwd 
     if ((first == that.data.aaa) && (second==that.data.bbb) )
-    {
-      wx.navigateTo({
+    {wx.navigateTo({
       url: '../shuju/shuju'
-      })
-    }
-  },
-
-  submit:function(){
-    wx.showToast({
-      title: '成功' + arr2,
-      icon: 'success',
-      duration: 2000
-    })  
-    var arr = [23, 12, 1, 34, 116, 8, 18, 37, 56, 50];
-    var arr2 = arr.sort(function (a, b) {
-      if (a > b) {
-        return 1;
-      } else if (a < b) {
-        return -1
-      } else {
-        return 0;
-      }
-    })
-    console.log(arr2);
+      })}},
+  xinjianyonghu: function () {
     wx.navigateTo({
-      url: '../shuju/shuju?arr2=' + this.data.arr2,
-      })
-    
-
-  },
-  xinjian: function () {
-    wx.navigateTo({
-      url: '../yonghu/yonghu'
+      url: '../xinjian/xinjian'
     })},
-  onLoad: function () {
-    console.log('onLoad');
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      })
-    })
-  }
-})
+  xiugaiyonghu: function () {
+    wx.navigateTo({
+      url: '../xiugai/xiugai'
+    })},
+    refresh_bt: function () {
+      var mingzi = wx.getStorageSync('mingzi');//wx.getStorageSync(key)，获取本地缓存
+      var mimaa = wx.getStorageSync('mimaa');//wx.getStorageSync(key)，获取本地缓存
+      wx.showToast({
+        title: '' + mingzi+ mimaa,
+        icon: 'success',
+        duration: 2000
+      }) 
+      this.data.itemLists.push({ time: mingzi + " " + mimaa });
+          app.globalData.singleChoiceAnswerNow = this.data.itemLists;
+  },})

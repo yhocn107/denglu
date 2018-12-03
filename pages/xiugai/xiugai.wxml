@@ -1,0 +1,10 @@
+<!--pages/xiugai/xiugai.wxml-->
+
+<view class='box'>
+<form bindsubmit='yonghuxiangguan'>
+      <text>111</text>
+      <input placeholder="请输入新的密码" type='text'  name='xinmima'></input>
+      <button form-type='submit' >修改</button>
+  </form>
+</view>
+ 

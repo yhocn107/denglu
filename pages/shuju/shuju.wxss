@@ -1,0 +1,18 @@
+/* pages/xinjian/xinjian.wxss */
+.add-btn{
+  background: chocolate;
+  width: 200rpx;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+}
+
+
+.list{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid;
+}
+.delete-btn{
+  background: red;
+}
